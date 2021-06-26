@@ -1,35 +1,34 @@
 name: Create zip file
 on:
-  pull_request:
+  push:
     branches: [main]
 
   workflow_dispatch:
 
-  jobs:
-    build:
-      runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-        - name: Get Current Pull Request
-          uses: 8BitJonny/gh-get-current-pr@1.0.1
-          id: pr
-          with:
-            github-token: $
-            filterOutClosed: true
+      - name: Get Current Pull Request
+        uses: 8BitJonny/gh-get-current-pr@1.0.1
+        id: pr
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          filterOutClosed: true
 
-        - id: file_changes
-          name: File Changes
-          uses: trilom/file-changes-action@v1.2.3
-          with:
-            prNumber: $
-            pushBefore: ""
-            pushAfter: ""
+      - id: file_changes
+        name: File Changes
+        uses: trilom/file-changes-action@v1.2.3
+        with:
+          prNumber: $
 
-        - name: Output File Changes
-          run: echo '$'
+      - name: Output File Changes
+        run: echo '$'
 
-        - name: Run one "build"
-          run: echo Hello, teppen-lexicon!
-          if: contains(steps.file_changes.outputs.files , '"teppen-lexicon/')
+      # Runs a single command using the runners shell
+      - name: Run one "build"
+        if: contains(steps.file_changes.outputs.files , '"teppen-lexicon/')
+        run: echo Hello, one!
