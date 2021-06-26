@@ -1,0 +1,29 @@
+name: Create zip file
+on: push
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get Current Pull Request
+        uses: 8BitJonny/gh-get-current-pr@1.0.1
+        id: pr
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          filterOutClosed: true
+
+      - id: file_changes
+        name: File Changes
+        uses: trilom/file-changes-action@v1.2.3
+        with:
+          prNumber: $
+
+      - name: Output File Changes
+        run: echo '$'
+
+      - name: Check packaged files
+        if: contains(steps.file_changes.outputs.files , '"teppen-lexicon/')
+        run: echo ${{steps.file_changes.outputs.files}}
