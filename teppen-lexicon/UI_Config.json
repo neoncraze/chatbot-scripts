@@ -1,17 +1,17 @@
 {
-   "output_file": "settings.json",
+  "output_file": "settings.json",
   "MessageInvalidInput": {
-   "type": "textbox",
-   "value": "@$user usage: !teppen <card name>",
-   "label": "Invalid message",
-   "tooltip": "Message the bot will send to anyone when command invalid $user",
-   "group": "General"
+    "type": "textbox",
+    "value": "@$user usage: !lexicon <card name>",
+    "label": "Invalid message",
+    "tooltip": "Message the bot will send to anyone when command invalid $user",
+    "group": "General"
   },
-    "Commands": {
+  "Commands": {
     "type": "textbox",
     "value": "!lexicon",
     "label": "Commands",
-    "tooltip": "Words the bot will be looking for, leave a space between each word to add more.",
+    "tooltip": "Words the bot will be looking for, leave a space between each word to add more. 'lexicon' is needed by default. ",
     "group": "Lexicon"
   }
 }

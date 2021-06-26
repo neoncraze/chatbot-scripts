@@ -40,8 +40,8 @@ class Settings:
                 self.__dict__ = json.load(f, encoding='utf-8-sig')
 
         else: #set variables if no custom settings file is found
-            self.MessageInvalidInput = "$user usage: !teppen <card name>"
-            self.Commands = "!teppen lexicon"
+            self.MessageInvalidInput = "@$user usage: !lexicon <card name>"
+            self.Commands = "!lexicon"
             
 
     # Reload settings on save through UI
