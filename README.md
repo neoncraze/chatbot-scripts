@@ -1,15 +1,9 @@
 # chatbot-scripts
 
-Mono-repository of Streamlabs Chatbot scripts.
+Mono-repository of Chatbot scripts.
 
-_Maintained by [@neoncraze\_](http://twitch.tv/neoncraze_)_
-
+_Maintained by [@neoncraze\_](http://twitch.tv/neoncraze_)._
 _Like my work? Reach out to me if you need something!_
-
-## Usage
-
-- Download the `.zip` file.
-- Import via Scripts tab. [[Guide](https://github.com/StreamlabsSupport/Streamlabs-Chatbot#scripts-not-loading)]
 
 ## Available scripts
 
